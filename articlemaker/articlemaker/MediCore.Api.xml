@@ -1,0 +1,1470 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MediCore.Api</name>
+    </assembly>
+    <members>
+        <member name="T:MediCore.Api.Startup">
+            <summary>
+            Partial class of Startup.cs
+            </summary>
+        </member>
+        <member name="M:MediCore.Api.Startup.SwaggerConfig(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Swagger configuration
+            </summary>
+            <param name="services">Service collection <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/></param>
+        </member>
+        <member name="M:MediCore.Api.Startup.SessionCacheConfig(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configuration for session and caching
+            </summary>
+            <param name="services">Service collection <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/></param>
+        </member>
+        <member name="M:MediCore.Api.Startup.CultureConfig(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Config for culture
+            </summary>
+            <param name="app">Application builder <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/> </param>
+        </member>
+        <member name="M:MediCore.Api.Startup.UseSwagger(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Using swagger
+            </summary>
+            <param name="app">Application builder <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/> </param>
+        </member>
+        <member name="P:MediCore.Api.Startup.Configuration">
+            <summary>
+            Configuration root
+            </summary>
+        </member>
+        <member name="M:MediCore.Api.Startup.#ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            Startup project
+            </summary>
+            <param name="env">Enviroment <see cref="T:Microsoft.AspNetCore.Hosting.IHostingEnvironment"/> </param>
+        </member>
+        <member name="M:MediCore.Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container
+            </summary>
+            <param name="services">Service collection <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/></param>
+        </member>
+        <member name="M:MediCore.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment,Microsoft.Extensions.Logging.ILoggerFactory)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline
+            </summary>
+            <param name="app">Application builder <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/> </param>
+            <param name="env">Hosting environtment <see cref="T:Microsoft.AspNetCore.Hosting.IHostingEnvironment"/></param>
+            <param name="loggerFactory">Logger factory <see cref="T:Microsoft.Extensions.Logging.ILoggerFactory"/></param>
+        </member>
+        <member name="M:MediCore.Api.Startup.DepedencyInjection(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adding dependency injection
+            </summary>
+            <param name="services">Service collection <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/></param>
+        </member>
+        <member name="T:MediCore.Api.Areas.Admin.AccountController">
+            <summary>
+            Controller of account
+            </summary>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.AccountController.#ctor(dna.core.auth.IAuthenticationService)">
+            <summary>
+            Constructor of <see cref="T:MediCore.Api.Areas.Admin.AccountController"/>
+            </summary>
+            <param name="auth">Interface of <see cref="T:dna.core.auth.AuthenticationService"/></param>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.AccountController.Register(dna.core.auth.Model.RegisterModel)">
+            <summary>
+            Register user method
+            </summary>
+            <param name="register">Register user <see cref="T:dna.core.auth.Model.RegisterModel"/></param>
+            <returns>ObjectResult</returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.AccountController.Login(dna.core.auth.Model.LoginModel)">
+            <summary>
+            Login method
+            </summary>
+            <param name="model">Login user <see cref="T:dna.core.auth.Model.LoginModel"/></param>
+            <returns></returns>
+        </member>
+        <member name="T:MediCore.Api.Areas.Admin.AdvertisingController">
+            <summary>
+            Controller of advertising
+            </summary>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.AdvertisingController.#ctor(dna.core.service.Services.Abstract.IAdvertisingService)">
+            <summary>
+            Initialize
+            </summary>
+            <param name="advertisingService"></param>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.AdvertisingController.Create(dna.core.service.Models.AdvertisingModel)">
+            <summary>
+            Post slider
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MediCore.Api.Areas.Admin.ApplicationController">
+            <summary>
+            Controller of application
+            </summary>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.ApplicationController.#ctor(MediCore.Service.Services.Extend.Abstract.IMenuBuilderService)">
+            <summary>
+            Initialize
+            </summary>
+            <param name="menuservice"></param>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.ApplicationController.Get(dna.core.data.Infrastructure.MenuType)">
+            <summary>
+            Get Menu by menu type
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.ApplicationController.GetParentMenu(dna.core.data.Infrastructure.MenuType)">
+            <summary>
+            Get parent menu by type
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.ApplicationController.Get(System.Int32)">
+            <summary>
+            Get menu detail
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.ApplicationController.GetMenuByType(dna.core.data.Infrastructure.MenuType,System.Int32,System.Int32)">
+            <summary>
+            Get menu by type
+            </summary>
+            <param name="type"></param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.ApplicationController.Post(dna.core.service.Models.TreeMenuModel)">
+            <summary>
+            Create new Menu
+            </summary>
+            <param name="param"></param>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.ApplicationController.Put(System.Int32,dna.core.service.Models.TreeMenuModel)">
+            <summary>
+            Edit Menu
+            </summary>
+            <param name="id"></param>
+            <param name="param"></param>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.ApplicationController.Delete(System.Int32)">
+            <summary>
+            Delete Menu
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="T:MediCore.Api.Areas.Admin.AppointmentController">
+            <summary>
+            Class controller of hospital appointment
+            </summary>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.AppointmentController.#ctor(MediCore.Service.Services.Abstract.IHospitalAppointmentService,MediCore.Service.Services.IHospitalAppointmentRatingService)">
+            <summary>
+            Method to initialize
+            </summary>
+            <param name="appointmentService"></param>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.AppointmentController.GetAppointmentAsync(MediCore.Api.InputParam.HospitalAppointmentParam)">
+            <summary>
+            Get hospital appointment for date range
+            </summary>        
+            <param name="param">Input parameter</param>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.AppointmentController.GetAppointmentByDoctor(MediCore.Api.InputParam.HospitalAppointmentParam)">
+            <summary>
+            Get hospital appointment for date range
+            </summary>        
+            <param name="param">Input parameter</param>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.AppointmentController.BookingDoctor(MediCore.Service.Model.HospitalAppointmentModel)">
+            <summary>
+            Booking doctor for non registered user
+            </summary>
+            <param name="param">Input param</param>
+            <returns><see cref="T:MediCore.Service.Model.HospitalAppointmentModel"/></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.AppointmentController.ProcessAppointment(System.Int32)">
+            <summary>
+            Process current appointment and sending notification
+            </summary>
+            <param name="id">Appointment Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.AppointmentController.FinishAppointment(System.Int32)">
+            <summary>
+            Finish current appointment and sending notification
+            </summary>
+            <param name="id">Appointment Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.AppointmentController.CancelAppointment(System.Int32,System.String)">
+            <summary>
+            Cancel appointment
+            </summary>
+            <param name="id">Appointment Id</param>
+            <param name="reason">Cancelled Reason</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.AppointmentController.GetHospitalRating(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Get hospital rating
+            </summary>
+            <param name="hid">Hospital Id</param>
+            <param name="pageIndex">Index page</param>
+            <param name="pageSize">page width</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.AppointmentController.DeleteRating(System.Int32)">
+            <summary>
+            Delete rating
+            </summary>
+            <param name="id">Rating Id</param>
+            <returns></returns>
+        </member>
+        <member name="T:MediCore.Api.Areas.Admin.ArticleController">
+            <summary>
+            Article Controller
+            </summary>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.ArticleController.GetCategoryDetail(System.Int32)">
+            <summary>
+            Get category detail
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.ArticleController.GetAllCategory(System.Int32,System.Int32)">
+            <summary>
+            Get all category
+            </summary>
+            <param name="page"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.ArticleController.PostCategory(dna.core.service.Models.ArticleCategoryModel)">
+            <summary>
+            Create category
+            </summary>
+            <param name="modelToCreate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.ArticleController.EditCategory(System.Int32,dna.core.service.Models.ArticleCategoryModel)">
+            <summary>
+            Edit category
+            </summary>
+            <param name="id"></param>
+            <param name="modelToEdit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.ArticleController.#ctor(dna.core.service.Services.Abstract.IArticleService,dna.core.service.Services.Abstract.IArticleCategoryService)">
+            <summary>
+            Initialize
+            </summary>
+            <param name="articleService"></param>
+            <param name="categoryService"></param>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.ArticleController.GetArticleDetailAsync(System.Int32)">
+            <summary>
+            Get category detail
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.ArticleController.GetAllArticleAsync(System.Int32,System.Int32)">
+            <summary>
+            Get all article
+            </summary>
+            <param name="page"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.ArticleController.Post(dna.core.service.Models.ArticleModel)">
+            <summary>
+            Create article
+            </summary>
+            <param name="modelToCreate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.ArticleController.Edit(System.Int32,dna.core.service.Models.ArticleModel)">
+            <summary>
+            Edit article
+            </summary>
+            <param name="id"></param>
+            <param name="modelToEdit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.ArticleController.ChangeArticleStatusAsync(System.Int32,dna.core.data.Infrastructure.ArticleStatus)">
+            <summary>
+            Change status of article
+            </summary>
+            <param name="id"></param>
+            <param name="status"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:MediCore.Api.Areas.Admin.ArticleController.UpdateArticleImage(System.Int32,Microsoft.AspNetCore.Http.IFormFile)" -->
+        <member name="T:MediCore.Api.Areas.Admin.FileController">
+            <summary>
+            Controller of fileuploader
+            </summary>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.FileController.#ctor(dna.core.service.Services.IFileServices,dna.core.service.Services.Abstract.IImageService)">
+            <summary>
+            File manipulation
+            </summary>
+            <param name="fileServices"></param>
+            <param name="imageServices"></param>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.FileController.UploadImage(System.Collections.Generic.IList{Microsoft.AspNetCore.Http.IFormFile})">
+            <summary>
+            Upload image multiple
+            </summary>
+            <param name="files"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.FileController.UploadImage(System.Boolean,Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Upload single image
+            </summary>
+            <param name="cover">Is primary image</param>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MediCore.Api.Areas.Admin.GeoLocationController">
+            <summary>
+            API about Country, Region and Regency
+            </summary>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.GeoLocationController.#ctor(MediCore.Service.Services.Abstract.ICountryService,MediCore.Service.Services.Abstract.IRegionService,MediCore.Service.Services.Abstract.IRegencyService)">
+            <summary>
+            Initialize class
+            </summary>
+            <param name="geoService"></param>
+            <param name="regionService"></param>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.GeoLocationController.GetAllRegionAsync(System.Int32,System.Boolean,System.Int32,System.Int32,System.String)">
+            <summary>
+            Get all region by clue
+            </summary>
+            <param name="countryId">Country Id</param>
+            <param name="includeInActive">Include InActive Region</param>
+            <param name="page">Current page</param>
+            <param name="pageSize">Page Width</param>
+            <param name="clue">Search text</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.GeoLocationController.GetRegionByCountry(System.Int32)">
+            <summary>
+            Get region list
+            </summary>
+            <param name="id">CountryId</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.GeoLocationController.EditRegion(System.Int32,MediCore.Service.Model.RegionModel)">
+            <summary>
+            Edit Region
+            </summary>
+            <param name="id">Country Id</param>
+            <param name="model">Country attribute</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.GeoLocationController.AddRegion(MediCore.Service.Model.RegionModel)">
+            <summary>
+            Add Region
+            </summary>
+            <param name="model">country attribute</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.GeoLocationController.ChangeStatusRegion(System.Int32,dna.core.data.Infrastructure.Status)">
+            <summary>
+            Change status region
+            </summary>
+            <param name="id"></param>
+            <param name="status"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.GeoLocationController.GetRegionDetail(System.Int32)">
+            <summary>
+            Get region and regency list
+            </summary>
+            <param name="countryId">Country Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.GeoLocationController.EditRegency(System.Int32,MediCore.Service.Model.RegencyModel)">
+            <summary>
+            Edit Region
+            </summary>
+            <param name="id">Country Id</param>
+            <param name="model">Country attribute</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.GeoLocationController.AddRegency(MediCore.Service.Model.RegencyModel)">
+            <summary>
+            Add Region
+            </summary>
+            <param name="model">country attribute</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.GeoLocationController.ChangeStatusRegency(System.Int32,dna.core.data.Infrastructure.Status)">
+            <summary>
+            Change status region
+            </summary>
+            <param name="id"></param>
+            <param name="status"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.GeoLocationController.GetRegency(System.Int32)">
+            <summary>
+            Get list of regency
+            </summary>
+            <param name="regionId">RegionId</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.GeoLocationController.GetRegencyDetailByCountry(System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            Get list regency include region by clue
+            </summary>
+            <param name="countryId"></param>
+            <param name="page"></param>
+            <param name="pageSize"></param>
+            <param name="clue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.GeoLocationController.GetCountry(System.Int32,System.Int32)">
+            <summary>
+            Get list of country incude Active/InActive
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.GeoLocationController.GetActiveCountry(System.Int32,System.Int32)">
+            <summary>
+            Get list of country incude Active/InActive
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.GeoLocationController.EditCountry(System.Int32,MediCore.Service.Model.CountryModel)">
+            <summary>
+            Edit country
+            </summary>
+            <param name="id">Country Id</param>
+            <param name="model">Country attribute</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.GeoLocationController.AddCountry(MediCore.Service.Model.CountryModel)">
+            <summary>
+            Add country
+            </summary>
+            <param name="model">country attribute</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.GeoLocationController.DeleteCountry(System.Int32)">
+            <summary>
+            Delete country
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.GeoLocationController.ChangeStatusCountry(System.Int32,dna.core.data.Infrastructure.Status)">
+            <summary>
+            Delete country
+            </summary>
+            <param name="id"></param>
+            <param name="status"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.GeoLocationController.GetAllUtcByCountry(System.Int32,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            Get UTC by country
+            </summary>
+            <param name="countryId">Country Id</param>
+            <param name="includeInActive">Include InActive UTC</param>
+            <param name="page">Page Index</param>
+            <param name="pageSize">Page Width</param>
+            <returns></returns>
+        </member>
+        <member name="T:MediCore.Api.Areas.Admin.HospitalController">
+            <summary>
+            Controller of Hospital
+            </summary>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.HospitalController.#ctor(MediCore.Service.Services.IHospitalService)">
+            <summary>
+            Initialize class
+            </summary>
+            <param name="hospitalService"></param>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.HospitalController.Get(System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            Method to get all hospital
+            </summary>
+            <returns></returns>
+            
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.HospitalController.Get(System.Int32)">
+            <summary>
+            GEt hospital detail
+            </summary>
+            <param name="id">Hospital Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.HospitalController.Post(MediCore.Service.Model.HospitalModel)">
+            <summary>
+            Method to add hospital
+            </summary>
+            <param name="param"><see cref="T:MediCore.Service.Model.HospitalModel"/> param</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.HospitalController.Put(System.Int32,MediCore.Service.Model.HospitalModel)">
+            <summary>
+            Method to edit hospital
+            </summary>
+            <param name="id">int HospitalId</param>
+            <param name="param"><see cref="T:MediCore.Service.Model.HospitalModel"/> param</param>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.HospitalController.ChangeHospitalStatus(System.Int32,MediCore.Data.Infrastructure.HospitalStatus)">
+            <summary>
+            Method to change hospital status
+            </summary>
+            <param name="id">Hospital Id</param>
+            <param name="status">Hospital Status Enum</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.HospitalController.Delete(System.Int32)">
+            <summary>
+            Delete hospital
+            </summary>
+            <param name="id">int HospitalId</param>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.HospitalController.UpdateHospitalMetadataAsync(System.Int32,MediCore.Service.Model.HospitalMetadataModel)">
+            <summary>
+            Update hospital metadata
+            </summary>
+            <param name="id">Hospital Id</param>
+            <param name="param">Hospital Metadata</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.HospitalController.UpdateHospitalImage(System.Int32,Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Upload image to hospital
+            </summary>
+            <param name="id">HospitalId</param>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.HospitalController.GetHospitalAssociatedUserAsync">
+            <summary>
+            Get hospital assocaited to user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.HospitalController.Dispose(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="T:MediCore.Api.Areas.Admin.HospitalOperatorController">
+            <summary>
+            API for hospital operator
+            </summary>
+        </member>
+        <member name="T:MediCore.Api.Areas.Admin.PolyClinicController">
+            <summary>
+            Controller of PolyClinic
+            </summary>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.PolyClinicController.#ctor(MediCore.Service.Services.IPolyClinicService,dna.core.service.Services.IFileServices)">
+            <summary>
+            Initialize class
+            </summary>
+            <param name="polyClinicService">DI <see cref="T:MediCore.Service.Services.IPolyClinicService"/></param>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.PolyClinicController.AddSpecialistToPolyClinic(MediCore.Api.InputParam.AddSpecialistToPolyClinicParam)">
+            <summary>
+            Method to add specialist to Polyclinic
+            </summary>
+            <remarks>
+            This method used to mapping between Polyclinic and specialist
+            (one to many)
+            </remarks>
+            <param name="model">input parameter <see cref="T:MediCore.Api.InputParam.AddSpecialistToPolyClinicParam"/></param>       
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.PolyClinicController.ImportData">
+            <summary>
+            Import data polyclinic from excel/csv file
+            </summary>
+            <returns>return type <see cref="T:Microsoft.AspNetCore.Mvc.OkObjectResult"/></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.PolyClinicController.GetAsync">
+            <summary>
+            Get all polyclinic
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.PolyClinicController.GetByClueAsync(System.String)">
+            <summary>
+            Get polyclinic by clue
+            </summary>
+            <param name="clue">search string</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.PolyClinicController.GetSingleAsync(System.Int32)">
+            <summary>
+            Get polyclinic detail
+            </summary>
+            <param name="id">PolyClinic Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.PolyClinicController.Post(MediCore.Service.Model.PolyClinicModel)">
+            <summary>
+            Add new polyclinic
+            </summary>
+            <param name="param"><see cref="T:MediCore.Service.Model.PolyClinicModel"/> param</param>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.PolyClinicController.Update(System.Int32,MediCore.Service.Model.PolyClinicModel)">
+            <summary>
+            Update polyclinic by Id
+            </summary>
+            <param name="id">int PolyClinicId</param>
+            <param name="param"><see cref="T:MediCore.Service.Model.PolyClinicModel"/> param</param>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.PolyClinicController.DeleteAsync(System.Int32)">
+            <summary>
+            Delete polyclinic by Id
+            </summary>
+            <param name="id">int PolyClinicId</param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:MediCore.Api.Areas.Admin.RatingController" -->
+        <member name="M:MediCore.Api.Areas.Admin.RatingController.#ctor(MediCore.Service.Services.IHospitalAppointmentRatingService)">
+            <summary>
+            Initialize
+            </summary>
+            <param name="ratingService"></param>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.RatingController.GetHospitalRatingAsync(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Get hospital rating
+            </summary>
+            <param name="hospitalId">Staff Id</param>
+            <param name="pageIndex">Curent Page</param>
+            <param name="pageSize">Page Width</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.RatingController.GetStaffRatingAsync(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Get medical staff rating
+            </summary>
+            <param name="staffId">Staff Id</param>
+            <param name="pageIndex">Curent Page</param>
+            <param name="pageSize">Page Width</param>
+            <returns></returns>
+        </member>
+        <member name="T:MediCore.Api.Areas.Admin.SpecialistController">
+            <summary>
+            Class of doctor
+            </summary>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.SpecialistController.#ctor(MediCore.Service.Services.IMedicalSpecialistService,dna.core.service.Services.IFileServices)">
+            <summary>
+            Initialize of controller
+            </summary>
+            <param name="medicalSpecialistService">Medical Specialist services <see cref="T:MediCore.Service.Services.IMedicalSpecialistService"/></param>
+            <param name="fileService">File services <see cref="T:dna.core.service.Services.IFileServices"/></param>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.SpecialistController.ImportData">
+            <summary>
+            Import data spesialist from excel/csv file
+            </summary>
+            <returns>return type <see cref="T:Microsoft.AspNetCore.Mvc.OkObjectResult"/></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.SpecialistController.Insert(MediCore.Service.Model.MedicalStaffSpecialistModel)">
+            <summary>
+            Method to insert specialist
+            </summary>ff
+            <param name="param">Input param <see cref="T:MediCore.Service.Model.MedicalStaffSpecialistModel"/></param>
+            <returns><see cref="T:Microsoft.AspNetCore.Mvc.OkObjectResult"/></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.SpecialistController.Update(System.Int32,MediCore.Service.Model.MedicalStaffSpecialistModel)">
+            <summary>
+            Update specialist data
+            </summary>
+            <param name="id">Input SpecialistId</param>
+            <param name="param">Input <see cref="T:MediCore.Service.Model.MedicalStaffSpecialistModel"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.SpecialistController.Delete(System.Int32)">
+            <summary>
+            Delete specialist for spesific id
+            </summary>
+            <param name="id">Specialist id</param>
+            <returns></returns>        
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.SpecialistController.Get">
+            <summary>
+            Get all specialist
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.SpecialistController.GetDetail(System.Int32)">
+            <summary>
+            Get specialist detail
+            </summary>
+            <param name="id">Specialist Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.SpecialistController.Dispose(System.Boolean)">
+            <inheritdoc/>        
+        </member>
+        <member name="T:MediCore.Api.Areas.Admin.StaffController">
+            <summary>
+            Class to manage medical staff
+            </summary>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.StaffController.#ctor(MediCore.Service.Services.Abstract.IMedicalStaffService,dna.core.service.Services.IFileServices)">
+            <summary>
+            Init class of StaffController
+            </summary>
+            <param name="medicalService"><see cref="T:MediCore.Service.Services.Abstract.IMedicalStaffService"/></param>
+            <param name="fileServices"><see cref="T:dna.core.service.Services.IFileServices"/></param>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.StaffController.GetAsync(System.Int32)">
+            <summary>
+            Get staff from ID
+            </summary>
+            <param name="id">int Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.StaffController.AssignStaffToHospitalAsync(MediCore.Api.InputParam.AssignStaffToHospitalParam)">
+            <summary>
+            Assign staff to hospital
+            </summary>
+            <param name="param">Input Parameter</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.StaffController.SetOperatingHoursAsync(System.Int32,System.Int32,MediCore.Api.InputParam.HospitalStaffOperatingHoursAndSettingParam)">
+            <summary>
+            Set Operating Hours for Medical Staff to Hospital
+            </summary>
+            <param name="hospitalId"></param>
+            <param name="staffId"></param>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.StaffController.GetStaffOperatingHoursAsync(System.Int32,System.Int32)">
+            <summary>
+            Get Staff operating hours
+            </summary>
+            <param name="hospitalId"></param>
+            <param name="staffId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.StaffController.UpdateStaffImage(System.Int32,Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Upload image to staff
+            </summary>
+            <param name="id">HospitalId</param>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.StaffController.GetAllDoctorByHospitalAsync(System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            Get all doctor by hospital
+            </summary>
+            <param name="hospitalId">int HospitalId</param>
+            <param name="pageIndex">int pageIndex</param>
+            <param name="pageSize">int pageSize</param>
+            <param name="clue">search keyword</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.StaffController.GetActiveDoctorWithOperatingHoursByHospitalAsync(System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            Get All Doctor Operating Hours
+            </summary>
+            <param name="hospitalId"></param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <param name="clue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.StaffController.GetNonRegisteredDoctorAsync(System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            Get all non registered doctor to hospital sorted by distance
+            </summary>
+            <param name="hospitalId">Current hospitalId</param>
+            <param name="pageIndex">current page number</param>
+            <param name="pageSize">Page width</param>
+            <param name="clue">Search keyword</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.StaffController.GetAllDoctorAsync(System.Int32,System.Int32,System.String)">
+            <summary>
+            Get all doctor
+            </summary>
+            <param name="pageIndex">int pageIndex</param>
+            <param name="pageSize">int pageSize</param>
+            <param name="clue">Search keyword</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.StaffController.RegisterDoctor(MediCore.Service.Model.MedicalStaffModel)">
+            <summary>
+            Register doctor
+            </summary>
+            <param name="param"><see cref="T:MediCore.Service.Model.MedicalStaffModel"/> param</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.StaffController.EditDoctor(System.Int32,MediCore.Service.Model.MedicalStaffModel)">
+            <summary>
+            Edit doctor
+            </summary>
+            <param name="id">Staff Id</param>
+            <param name="param">Input parameter</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.StaffController.ChangeDoctorStatus(System.Int32,MediCore.Data.Infrastructure.MedicalStaffStatus)">
+            <summary>
+            Change doctor status
+            </summary>
+            <param name="id">Staff Id</param>
+            <param name="status">doctor status</param>
+            <returns></returns>
+        </member>
+        <member name="T:MediCore.Api.Areas.Admin.TestController">
+            <summary>
+            Controller of test
+            </summary>
+        </member>
+        <member name="M:MediCore.Api.Areas.Admin.TestController.SendSMS(MediCore.Api.Areas.Admin.SmsModel)">
+            <summary>
+            Test SMS
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MediCore.Api.Controllers.AdvertisingController">
+            <summary>
+            Controller for advertising
+            </summary>
+        </member>
+        <member name="M:MediCore.Api.Controllers.AdvertisingController.#ctor(dna.core.service.Services.Abstract.IAdvertisingService)">
+            <summary>
+            Initialize
+            </summary>
+            <param name="advertisingService"></param>
+        </member>
+        <member name="M:MediCore.Api.Controllers.AdvertisingController.GetSlider">
+            <summary>
+            Get active slider
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MediCore.Api.Controllers.AppointmentController">
+            <summary>
+            Class controller of Hospital Appointment
+            </summary>
+        </member>
+        <member name="M:MediCore.Api.Controllers.AppointmentController.#ctor(MediCore.Service.Services.Abstract.IHospitalAppointmentService,MediCore.Service.Services.IHospitalAppointmentRatingService,dna.core.auth.IAuthenticationService)">
+            <summary>
+            Initialize controller
+            </summary>
+            <param name="appointmentService"></param>
+            <param name="ratingService"></param>
+            <param name="authService"></param>
+        </member>
+        <member name="M:MediCore.Api.Controllers.AppointmentController.Create(MediCore.Api.InputParam.UserAppointmentViewModel)">
+            <summary>
+            Create appointment for login user
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Controllers.AppointmentController.Edit(System.Int32,MediCore.Service.Model.HospitalAppointmentModel)">
+            <summary>
+            Edit appointment for login user
+            </summary>
+            <param name="id">Appointment Id</param>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Controllers.AppointmentController.AddEditAppointmentDetail(System.Int32,MediCore.Service.Model.HospitalAppointmentDetailModel)">
+            <summary>
+            Add/Edit appointment detail
+            </summary>
+            <param name="id">Appointment Id</param>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Controllers.AppointmentController.Delete(System.Int32)">
+            <summary>
+            Delete appointment
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Controllers.AppointmentController.DeleteAppointmentDetail(System.Int32)">
+            <summary>
+            Delete appointment detail
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Controllers.AppointmentController.Get(System.Int32,System.Int32)">
+            <summary>
+            Get list appointment for login user
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:MediCore.Api.Controllers.AppointmentController.Get(System.Int32)" -->
+        <member name="M:MediCore.Api.Controllers.AppointmentController.GetHospitalRating(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Get hospital rating
+            </summary>
+            <param name="hid">Hospital Id</param>
+            <param name="pageIndex">Index page</param>
+            <param name="pageSize">page width</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Controllers.AppointmentController.DeleteRating(System.Int32)">
+            <summary>
+            Delete rating
+            </summary>
+            <param name="id">Rating Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Controllers.AppointmentController.CreateRating(MediCore.Service.Model.HospitalAppointmentRatingModel)">
+            <summary>
+            Crate new rating
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Controllers.AppointmentController.UpdateRating(System.Int32,MediCore.Service.Model.HospitalAppointmentRatingModel)">
+            <summary>
+            Update rating by id
+            </summary>
+            <param name="id"></param>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MediCore.Api.Controllers.ArticleController">
+            <summary>
+            Controller for article
+            </summary>
+        </member>
+        <member name="M:MediCore.Api.Controllers.ArticleController.#ctor(dna.core.service.Services.Abstract.IArticleService)">
+            <summary>
+            Initialize
+            </summary>
+            <param name="articleService"></param>
+        </member>
+        <member name="M:MediCore.Api.Controllers.ArticleController.GetNewestArticle(System.Int32,System.Int32)">
+            <summary>
+            Get newest article
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Controllers.ArticleController.GetArticleByStaff(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Get article by medical staff
+            </summary>
+            <param name="id">Staff Id</param>
+            <param name="pageIndex">Page Index</param>
+            <param name="pageSize">Page Width</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Controllers.ArticleController.Get(System.Int32)">
+            <summary>
+            Get article detail
+            </summary>
+            <param name="id">Article Id</param>
+            <returns></returns>
+        </member>
+        <member name="T:MediCore.Api.Controllers.FirebaseController">
+            <summary>
+            Firebase controller
+            </summary>
+        </member>
+        <member name="M:MediCore.Api.Controllers.FirebaseController.#ctor(dna.core.service.Services.Abstract.IFirebaseUserMapUserService)">
+            <summary>
+            Initialize
+            </summary>
+            <param name="service"></param>
+        </member>
+        <member name="M:MediCore.Api.Controllers.FirebaseController.Create(dna.core.service.Models.FirebaseUserMapModel)">
+            <summary>
+            Register token for current device
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MediCore.Api.Controllers.GeoLocationController">
+            <summary>
+            API about Country, Region and Regency
+            </summary>
+        </member>
+        <member name="M:MediCore.Api.Controllers.GeoLocationController.#ctor(MediCore.Service.Services.Abstract.ICountryService,MediCore.Service.Services.Abstract.IRegionService,MediCore.Service.Services.Abstract.IRegencyService)">
+            <summary>
+            Initialize class
+            </summary>
+            <param name="geoService"></param>
+            <param name="regionService"></param>
+            <param name="regencyService"></param>
+        </member>
+        <member name="M:MediCore.Api.Controllers.GeoLocationController.GetAllRegionAsync(System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            Get all region by clue
+            </summary>
+            <param name="countryId">Country Id</param>       
+            <param name="page">Current page</param>
+            <param name="pageSize">Page Width</param>
+            <param name="clue">Search text</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Controllers.GeoLocationController.GetRegionByCountryAsync(System.Int32)">
+            <summary>
+            Get region list
+            </summary>
+            <param name="id">CountryId</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Controllers.GeoLocationController.GetRegionDetailAsync(System.Int32)">
+            <summary>
+            Get region and regency list
+            </summary>
+            <param name="countryId">Country Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Controllers.GeoLocationController.GetRegencyAsync(System.Int32)">
+            <summary>
+            Get list of regency
+            </summary>
+            <param name="regionId">RegionId</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Controllers.GeoLocationController.GetRegencyDetailByCountry(System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            Get list regency include region by clue
+            </summary>
+            <param name="countryId"></param>
+            <param name="page"></param>
+            <param name="pageSize"></param>
+            <param name="clue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Controllers.GeoLocationController.GetActiveCountryAsync(System.Int32,System.Int32)">
+            <summary>
+            Get list of country incude Active/InActive
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Controllers.GeoLocationController.GetAllUtcByCountry(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Get UTC by country
+            </summary>
+            <param name="countryId">Country Id</param>        
+            <param name="page">Page Index</param>
+            <param name="pageSize">Page Width</param>
+            <returns></returns>
+        </member>
+        <member name="T:MediCore.Api.Controllers.HospitalController">
+            <summary>
+            Controller of Hospital
+            </summary>
+        </member>
+        <member name="M:MediCore.Api.Controllers.HospitalController.#ctor(MediCore.Service.Services.IHospitalService)">
+            <summary>
+            Initialize class
+            </summary>
+            <param name="hospitalService"></param>
+        </member>
+        <member name="M:MediCore.Api.Controllers.HospitalController.Get(System.Int32,System.Int32)">
+            <summary>
+            Get all hospital by paging
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Controllers.HospitalController.Get(System.Int32)">
+            <summary>
+            Get hospital detil by hospital Id
+            </summary>
+            <param name="id">Hospital Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Controllers.HospitalController.NearestHospital(MediCore.Api.InputParam.NearestLocationParam)">
+            <summary>
+            Find nearest hospital
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Controllers.HospitalController.NearestHospital(System.Double,System.Double,System.Int32,System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            Find nearest doctor associated with hospital location
+            </summary>
+            <param name="longitude">Longitude coordinate</param>
+            <param name="latitude">Latitude coordinate</param>
+            <param name="radius">Radius searching</param>
+            <param name="polyclinicIds">PolyClinic Id seperate by ",". Example: 1,2</param>
+            <param name="pageIndex">Current page index</param>
+            <param name="pageSize">Page width</param>
+            <param name="clue">keyword searching</param>
+            <returns></returns>
+        </member>
+        <member name="T:MediCore.Api.Controllers.PatientController">
+            <summary>
+            Class controller of Patient
+            </summary>
+        </member>
+        <member name="M:MediCore.Api.Controllers.PatientController.#ctor(MediCore.Service.Services.Abstract.IPatientService,dna.core.auth.IAuthenticationService)">
+            <summary>
+            Initilize method
+            </summary>
+            <param name="patientService"></param>
+            <param name="authService"></param>
+        </member>
+        <member name="M:MediCore.Api.Controllers.PatientController.GetAllPatient(System.Int32,System.Int32)">
+            <summary>
+            Get user's patient
+            </summary>
+            <param name="pageIndex">Current Page</param>
+            <param name="pageSize">Page Width</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Controllers.PatientController.Get(System.Int32)">
+            <summary>
+            Get patient detail
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Controllers.PatientController.Post(MediCore.Service.Model.PatientModel)">
+            <summary>
+            Create patient
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Controllers.PatientController.Put(System.Int32,MediCore.Service.Model.PatientModel)">
+            <summary>
+            Edit patient
+            </summary>
+            <param name="id">Patient Id</param>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Controllers.PatientController.Delete(System.Int32)">
+            <summary>
+            InActive the patient
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="T:MediCore.Api.Controllers.PolyClinicController">
+            <summary>
+            Class of polyclinic
+            </summary>
+        </member>
+        <member name="M:MediCore.Api.Controllers.PolyClinicController.#ctor(MediCore.Service.Services.IPolyClinicService)">
+            <summary>
+            Initialize method
+            </summary>
+            <param name="polyClinicService"></param>
+        </member>
+        <member name="M:MediCore.Api.Controllers.PolyClinicController.Get">
+            <summary>
+            Method to get all polyclinic
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MediCore.Api.Controllers.RatingController">
+            <summary>
+            Controller of rating
+            </summary>
+        </member>
+        <member name="M:MediCore.Api.Controllers.RatingController.#ctor(MediCore.Service.Services.IHospitalAppointmentRatingService)">
+            <summary>
+            Initialize
+            </summary>
+            <param name="ratingService"></param>
+        </member>
+        <member name="M:MediCore.Api.Controllers.RatingController.Post(MediCore.Service.Model.HospitalAppointmentRatingModel)">
+            <summary>
+            Post rating to spesific appointment
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Controllers.RatingController.GetHospitalRatingAsync(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Get hospital rating
+            </summary>
+            <param name="hospitalId">Staff Id</param>
+            <param name="pageIndex">Curent Page</param>
+            <param name="pageSize">Page Width</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Controllers.RatingController.GetStaffRatingAsync(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Get medical staff rating
+            </summary>
+            <param name="staffId">Staff Id</param>
+            <param name="pageIndex">Curent Page</param>
+            <param name="pageSize">Page Width</param>
+            <returns></returns>
+        </member>
+        <member name="T:MediCore.Api.Controllers.SpecialistController">
+            <summary>
+            Class of specialist
+            </summary>
+        </member>
+        <member name="M:MediCore.Api.Controllers.SpecialistController.#ctor(MediCore.Service.Services.IMedicalSpecialistService)">
+            <summary>
+            Initialize class
+            </summary>
+            <param name="medicalSpecialistService"></param>
+        </member>
+        <member name="M:MediCore.Api.Controllers.SpecialistController.Get">
+            <summary>
+            Method to get all specialist
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MediCore.Api.Controllers.StaffController">
+            <summary>
+            Class to manage medical staff
+            </summary>
+        </member>
+        <member name="M:MediCore.Api.Controllers.StaffController.#ctor(MediCore.Service.Services.Abstract.IMedicalStaffService)">
+            <summary>
+            Init class of StaffController
+            </summary>
+            <param name="medicalService"><see cref="T:MediCore.Service.Services.Abstract.IMedicalStaffService"/> medicalService</param>
+        </member>
+        <member name="M:MediCore.Api.Controllers.StaffController.Get(System.Int32)">
+            <summary>
+            Get staff from ID
+            </summary>
+            <param name="id">int Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Controllers.StaffController.Dispose(System.Boolean)">
+            <inheritdoc/>        
+        </member>
+        <member name="M:MediCore.Api.Controllers.StaffController.GetDoctorByHospital(System.Int32,System.Int32)">
+            <summary>
+            Get staff doctor by hospital
+            </summary>
+            <param name="id">int hospitalId</param>
+            <param name="pageIndex">int pageIndex</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Controllers.StaffController.GetNearestDoctorAsync(MediCore.Api.InputParam.NearestLocationParam)">
+            <summary>
+            Find nearest doctor associated with hospital location
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Controllers.StaffController.GetNearestDoctorAsync(System.Double,System.Double,System.Int32,System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            Find nearest doctor associated with hospital location
+            </summary>
+            <param name="longitude">Longitude coordinate</param>
+            <param name="latitude">Latitude coordinate</param>
+            <param name="radius">Radius searching</param>
+            <param name="polyclinicIds">PolyClinic Id seperate by ",". Example: 1,2</param>
+            <param name="pageIndex">Current page index</param>
+            <param name="pageSize">Page width</param>
+            <param name="clue">keyword searching</param>
+            <returns></returns>
+        </member>
+        <member name="M:MediCore.Api.Controllers.StaffController.GetStaffOperatingHoursByDate(System.Int32,System.Int32)">
+            <summary>
+            Get doctor operating hours on every hospital by day of week
+            </summary>
+            <param name="staffId"></param>
+            <param name="dayOfWeek"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MediCore.Api.Controllers.TestController">
+            <summary>
+            Sender Test
+            </summary>
+        </member>
+        <member name="M:MediCore.Api.Controllers.TestController.#ctor(dna.core.libs.Sender.ISenderFactory)">
+            <summary>
+            Initialize
+            </summary>
+            <param name="sender"></param>
+        </member>
+        <member name="M:MediCore.Api.Controllers.TestController.Post(MediCore.Api.InputParam.FirebaseModel)">
+            <summary>
+            Sending message to device by token
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MediCore.Api.CustomEntity.SpecialistExcelEntity">
+            <summary>
+            Class of Excel entities
+            <remarks>
+            The order of enties must same as excel column
+            </remarks>
+            </summary>
+        </member>
+        <member name="T:MediCore.Api.InputParam.AddSpecialistToPolyClinicParam">
+            <summary>
+            Model view for add specialist to polyclinic
+            </summary>
+        </member>
+        <member name="T:MediCore.Api.InputParam.HospitalAppointmentParam">
+            <summary>
+            Input parameter for HospitalAppointment
+            </summary>
+        </member>
+        <member name="P:MediCore.Api.InputParam.HospitalAppointmentParam.Filter">
+            <summary>
+            Filter allow null
+            </summary>
+        </member>
+        <member name="T:MediCore.Api.InputParam.UserAppointmentViewModel">
+            <summary>
+            User appointment
+            </summary>
+        </member>
+        <member name="T:MediCore.Api.Resources.ValidationErrorMessage">
+            <summary>
+               A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:MediCore.Api.Resources.ValidationErrorMessage.ResourceManager">
+            <summary>
+               Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:MediCore.Api.Resources.ValidationErrorMessage.Culture">
+            <summary>
+               Overrides the current thread's CurrentUICulture property for all
+               resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:MediCore.Api.Resources.ValidationErrorMessage.NumberOnly">
+            <summary>
+               Looks up a localized string similar to Kolom {0} hanya boleh angka.
+            </summary>
+        </member>
+        <member name="P:MediCore.Api.Resources.ValidationErrorMessage.Required">
+            <summary>
+               Looks up a localized string similar to Kolom {0} tidak boleh kosong.
+            </summary>
+        </member>
+        <member name="P:MediCore.Api.Resources.ValidationErrorMessage.StringLength">
+            <summary>
+               Looks up a localized string similar to Kolom {0} tidak boleh lebih dari {1} karakter.
+            </summary>
+        </member>
+        <member name="P:MediCore.Api.Resources.ValidationErrorMessage.StringLength_With_Minimum">
+            <summary>
+               Looks up a localized string similar to Kolom {0} antara {2} sampai {1} karakter.
+            </summary>
+        </member>
+        <member name="T:MediCore.Api.Resources.Model.MedicalStaffSpecialistModel">
+            <summary>
+               A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:MediCore.Api.Resources.Model.MedicalStaffSpecialistModel.ResourceManager">
+            <summary>
+               Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:MediCore.Api.Resources.Model.MedicalStaffSpecialistModel.Culture">
+            <summary>
+               Overrides the current thread's CurrentUICulture property for all
+               resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:MediCore.Api.Resources.Model.MedicalStaffSpecialistModel.Description">
+            <summary>
+               Looks up a localized string similar to Deskripsi.
+            </summary>
+        </member>
+        <member name="P:MediCore.Api.Resources.Model.MedicalStaffSpecialistModel.Name">
+            <summary>
+               Looks up a localized string similar to Spesialis.
+            </summary>
+        </member>
+        <member name="P:MediCore.Api.Resources.Model.MedicalStaffSpecialistModel.Required">
+            <summary>
+               Looks up a localized string similar to Kolom {0} tidak boleh kosong.
+            </summary>
+        </member>
+        <member name="P:MediCore.Api.Resources.Model.MedicalStaffSpecialistModel.StringLength">
+            <summary>
+               Looks up a localized string similar to Kolom {0} tidak boleh lebih dari {1} karakter.
+            </summary>
+        </member>
+        <member name="T:MediCore.Api.Resources.Model.PolyClinicModel">
+            <summary>
+               A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:MediCore.Api.Resources.Model.PolyClinicModel.ResourceManager">
+            <summary>
+               Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:MediCore.Api.Resources.Model.PolyClinicModel.Culture">
+            <summary>
+               Overrides the current thread's CurrentUICulture property for all
+               resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:MediCore.Api.Resources.Model.PolyClinicModel.Required">
+            <summary>
+               Looks up a localized string similar to Kolom {0} tidak boleh kosong.
+            </summary>
+        </member>
+        <member name="P:MediCore.Api.Resources.Model.PolyClinicModel.StringLength">
+            <summary>
+               Looks up a localized string similar to Kolom {0} tidak boleh lebih dari {1}.
+            </summary>
+        </member>
+        <member name="T:MediCore.Api.Swagger.AuthorizationHeaderParameterOperationFilter">
+            <summary>
+            Adding custom input field to add token
+            format : Bearer {accessToken}
+            </summary>
+        </member>
+        <member name="M:MediCore.Api.Swagger.AuthorizationHeaderParameterOperationFilter.Apply(Swashbuckle.Swagger.Model.Operation,Swashbuckle.SwaggerGen.Generator.OperationFilterContext)">
+            <summary>
+            Apply inheret
+            </summary>
+            <param name="operation"><see cref="T:Swashbuckle.Swagger.Model.Operation"/></param>
+            <param name="context"><see cref="T:Swashbuckle.SwaggerGen.Generator.OperationFilterContext"/></param>
+        </member>
+    </members>
+</doc>

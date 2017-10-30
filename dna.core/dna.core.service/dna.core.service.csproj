@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<TargetFrameworks>netstandard2.0</TargetFrameworks>
+	 <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	  <PackageId>dna.core.service</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="global.json">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\dna.core.libs\dna.core.libs.csproj" />
+    <ProjectReference Include="..\dna.core.data\dna.core.data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="5.2.0" />
+    <PackageReference Include="SendGrid" Version="9.9.0" />
+  </ItemGroup>
+
+</Project>

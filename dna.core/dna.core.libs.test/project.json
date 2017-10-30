@@ -1,0 +1,27 @@
+{
+	"version": "1.0.0-*",
+	"testRunner": "xunit",
+	"dependencies": {
+		"dna.core.libs": "1.0.0-*",
+		"xunit": "2.2.0",
+		"dotnet-test-xunit": "2.2.0-preview2-build1029",
+		"Moq": "4.7.10"
+	},
+
+	"frameworks": {
+		"netcoreapp1.0": {
+			"imports": [
+				"portable-net45+wp80+win8+wpa81+dnxcore50",
+				"dnxcore50",
+				"net452"
+			],
+			"dependencies": {
+				"Microsoft.NETCore.App": {
+					"type": "platform",
+					"version": "1.1.0"
+				}
+			}
+		}
+	}
+	
+}
