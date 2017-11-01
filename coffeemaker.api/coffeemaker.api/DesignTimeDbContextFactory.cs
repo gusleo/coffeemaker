@@ -22,8 +22,9 @@ namespace coffeemaker.api
             var builder = new DbContextOptionsBuilder<DnaCoreContext>();
 
             var connectionString = configuration.GetConnectionString("DefaultConnection");
+            string assemblyName = System.Reflection.Assembly.GetExecutingAssembly().GetName().Name;
 
-            builder.UseSqlServer(connectionString, b => b.MigrationsAssembly("coffeemaker"));
+            builder.UseNpgsql(connectionString, b => b.MigrationsAssembly(assemblyName));
 
             return new DnaCoreContext(builder.Options);
         }

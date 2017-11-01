@@ -38,13 +38,13 @@ namespace coffeemaker.api
         public void ConfigureServices(IServiceCollection services)
         {
             string connection = Configuration.GetConnectionString("DefaultConnection");
-
+            string assemblyName = System.Reflection.Assembly.GetExecutingAssembly().GetName().Name;
             services.AddMvc();
            
 
             services.AddDbContext<DnaCoreContext>(options => {
-                options.UseSqlServer(connection,
-                b => b.MigrationsAssembly("coffeemaker"));
+                options.UseNpgsql(connection,
+                b => b.MigrationsAssembly(assemblyName));
             });
 
             services.AddIdentity<ApplicationUser, ApplicationRole>(options => {               
