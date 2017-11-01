@@ -8,7 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace coffeemaker
+namespace coffeemaker.api
 {
     public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<DnaCoreContext>
     {

@@ -7,7 +7,7 @@ using dna.core.service.Services.Abstract;
 using dna.core.libs.Validation;
 using dna.core.data.Infrastructure;
 
-namespace coffeemaker.Controllers
+namespace coffeemaker.api.Controllers
 {
     /// <summary>
     /// Controller for article

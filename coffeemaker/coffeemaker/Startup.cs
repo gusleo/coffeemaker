@@ -20,7 +20,7 @@ using Microsoft.AspNetCore.Http;
 using dna.core.auth.Entity;
 using Microsoft.AspNetCore.Identity;
 
-namespace coffeemaker
+namespace coffeemaker.api
 {
     public partial class Startup
     {
