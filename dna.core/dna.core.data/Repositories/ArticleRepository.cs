@@ -37,9 +37,9 @@ namespace dna.core.data.Repositories
                               {
                                   Id = c.Id,
                                   Name = c.Name
-                              },
-                              ImageMaps = (from i in DnaCoreContext.Image
-                                           join map in DnaCoreContext.ArticleImage on i.Id equals map.ImageId
+                              },                             
+                              ImageMaps = (from map in a.ImageMaps 
+                                           join i in DnaCoreContext.Image on map.ImageId equals i.Id
                                            where map.ArticleId == a.Id && i.IsPrimary == true
                                            select new ArticleImage
                                            {

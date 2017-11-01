@@ -8,7 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace articlemaker
+namespace coffeemaker
 {
     public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<DnaCoreContext>
     {
@@ -23,7 +23,7 @@ namespace articlemaker
 
             var connectionString = configuration.GetConnectionString("DefaultConnection");
 
-            builder.UseSqlServer(connectionString, b => b.MigrationsAssembly("articlemaker"));
+            builder.UseSqlServer(connectionString, b => b.MigrationsAssembly("coffeemaker"));
 
             return new DnaCoreContext(builder.Options);
         }

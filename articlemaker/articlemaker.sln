@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "articlemaker", "articlemaker\articlemaker.csproj", "{7A7F5D3F-6A61-4AC6-9422-99261B5A1015}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "coffeemaker", "articlemaker\coffeemaker.csproj", "{7A7F5D3F-6A61-4AC6-9422-99261B5A1015}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dna.core.data", "..\dna.core\dna.core.data\dna.core.data.csproj", "{F1240D3B-4A90-40A5-8E1F-65A25E600028}"
 EndProject

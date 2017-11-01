@@ -1,22 +1,26 @@
 ﻿using dna.core.auth.Entity;
+using dna.core.auth.Infrastructure;
 using dna.core.data.Entities;
 using dna.core.data.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace dna.core.data
 {
+   
     public static class DbInitializerExtension
     {
          private static DnaCoreContext _context;
 
-        public static void InitializeDatabase(this IApplicationBuilder app)
+        public static async void InitializeDatabase(this IApplicationBuilder app)
         {
             using ( var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope() )
             {
@@ -24,39 +28,22 @@ namespace dna.core.data
 
                 try
                 {
-                    _context.Database.Migrate();
+                    await _context.Database.MigrateAsync();
                 }
                 catch ( Exception ex )
                 {
-                    Console.Write("Database already migrate");
+                    Console.Write("Database already migrate. Detail: " + ex.Message);
                 }
 
-                InitData();
+                await Task.Run(() => InitData());
             }
         }
 
-        
-        public static void InitData()
+
+        public static async Task  InitData()
         {
-            
+            await SeedUser();
 
-            if ( !_context.Users.Any() )
-            {
-                var user = new ApplicationUser
-                {
-                    UserName = "admin@smartmedika.com",
-                    NormalizedUserName = "admin@smartmedika.com",
-                    Email = "admin@smartmedika.com",
-                    NormalizedEmail = "admin@smartmedika.com",
-                    EmailConfirmed = true,
-                    LockoutEnabled = false,
-                    SecurityStamp = Guid.NewGuid().ToString()                    
-                };
-                user.PasswordHash = new PasswordHasher<ApplicationUser>().HashPassword(user, "Test123!");
-                _context.Users.Add(user);
-                _context.SaveChanges();
-
-            }
             if ( !_context.ArticleCategory.Any() )
             {
                 var categories = new List<ArticleCategory>()
@@ -122,6 +109,38 @@ namespace dna.core.data
             }
 
            
+           
+        }
+
+        public static async Task SeedUser(){
+
+            var user = new ApplicationUser
+            {
+                UserName = "admin@yourdomain.com",
+                NormalizedUserName = "admin@yourdomain.com",
+                Email = "admin@yourdomain.com",
+                NormalizedEmail = "admin@yourdomain.com",
+                EmailConfirmed = true,
+                LockoutEnabled = false,
+                SecurityStamp = Guid.NewGuid().ToString()
+            };
+
+            var roleStore = new CustomRoleStore(_context);
+
+            if ( !_context.Roles.Any(r => r.Name == MembershipConstant.SuperAdmin) )
+            {
+                await roleStore.CreateAsync(new ApplicationRole { Name = MembershipConstant.SuperAdmin, NormalizedName = MembershipConstant.SuperAdmin });
+            }
+
+            if ( !_context.Users.Any(u => u.UserName == user.UserName) )
+            {
+                var password = new PasswordHasher<ApplicationUser>();
+                var hashed = password.HashPassword(user, "yourpassword123!");
+                user.PasswordHash = hashed;
+                var userStore = new CustomUserStore(_context);
+                await userStore.CreateAsync(user);
+                await userStore.AddToRoleAsync(user, MembershipConstant.SuperAdmin);
+            }
         }
         
     }

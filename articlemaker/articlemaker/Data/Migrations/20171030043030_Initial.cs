@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 using System.Collections.Generic;
 
-namespace articlemaker.Data.Migrations
+namespace coffeemaker.Data.Migrations
 {
     public partial class Initial : Migration
     {

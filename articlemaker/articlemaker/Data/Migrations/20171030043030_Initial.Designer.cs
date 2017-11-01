@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
 using System;
 
-namespace articlemaker.Data.Migrations
+namespace coffeemaker.Data.Migrations
 {
     [DbContext(typeof(DnaCoreContext))]
     [Migration("20171030043030_Initial")]

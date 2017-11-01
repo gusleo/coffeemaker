@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
 
-namespace articlemaker
+namespace coffeemaker
 {
     public partial class Startup
     {

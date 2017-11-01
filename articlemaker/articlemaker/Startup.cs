@@ -20,7 +20,7 @@ using Microsoft.AspNetCore.Http;
 using dna.core.auth.Entity;
 using Microsoft.AspNetCore.Identity;
 
-namespace articlemaker
+namespace coffeemaker
 {
     public partial class Startup
     {
@@ -44,7 +44,7 @@ namespace articlemaker
 
             services.AddDbContext<DnaCoreContext>(options => {
                 options.UseSqlServer(connection,
-                b => b.MigrationsAssembly("articlemaker"));
+                b => b.MigrationsAssembly("coffeemaker"));
             });
 
             services.AddIdentity<ApplicationUser, ApplicationRole>(options => {               
@@ -76,8 +76,10 @@ namespace articlemaker
             //configure HttpContext so it can use by AuthenticationService
             HTTPHelper.Configure(app.ApplicationServices.GetRequiredService<IHttpContextAccessor>());
 
-
+            //Seed Database
             app.InitializeDatabase();
+
+
             UseSwagger(app);
             app.UseMvc();
         }

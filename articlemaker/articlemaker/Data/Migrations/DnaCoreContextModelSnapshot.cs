@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
 using System;
 
-namespace articlemaker.Data.Migrations
+namespace coffeemaker.Data.Migrations
 {
     [DbContext(typeof(DnaCoreContext))]
     partial class DnaCoreContextModelSnapshot : ModelSnapshot
