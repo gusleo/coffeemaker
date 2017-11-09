@@ -39,6 +39,7 @@ namespace coffeemaker.api
         {
             string connection = Configuration.GetConnectionString("DefaultConnection");
             string assemblyName = System.Reflection.Assembly.GetExecutingAssembly().GetName().Name;
+            services.AddCors();
             services.AddMvc();
            
 
@@ -81,6 +82,12 @@ namespace coffeemaker.api
 
 
             UseSwagger(app);
+            app.UseCors(builder =>
+                builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials()
+            );
             app.UseMvc();
         }
     }
